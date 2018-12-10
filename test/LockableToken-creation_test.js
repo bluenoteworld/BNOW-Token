@@ -1,8 +1,8 @@
-const BNOWToken = artifacts.require('./BNOWToken.sol');
+const lockableToken = artifacts.require('./LockableToken.sol');
 const assertExpectedArguments = require('./utils/assertExpectedArguments');
 const { assertRevert } = require('./utils/assertRevert');
 
-contract('BNOWToken', ([owner, receiver, spender]) => {
+contract('LockableToken', ([owner, receiver, spender]) => {
   const supply = 1000;
   const lockReason = 'GOV';
   const lockReason2 = 'UTILITY';
@@ -36,14 +36,14 @@ contract('BNOWToken', ([owner, receiver, spender]) => {
 
   context('given invalid params', () => {
     it('error if not supplied any params', () =>
-      assertExpectedArguments(1)(BNOWToken.new()));
+      assertExpectedArguments(1)(lockableToken.new()));
   });
 
   context('given valid params', () => {
     let token;
 
     before(async () => {
-      token = await BNOWToken.new(supply);
+      token = await lockableToken.new(supply);
     });
 
     it('can be created', () => {

@@ -1,11 +1,10 @@
 pragma solidity 0.4.24;
 
 import "../../openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
-import "../../openzeppelin-solidity/contracts/token/ERC20/ERC20Detailed.sol";
 import "./ERC1132.sol";
 
 
-contract BNOWToken is ERC1132, ERC20, ERC20Detailed {
+contract LockableToken is ERC1132, ERC20 {
 
    /**
     * @dev Error messages for require statements
@@ -18,8 +17,7 @@ contract BNOWToken is ERC1132, ERC20, ERC20Detailed {
     * @dev constructor to mint initial tokens
     * Shall update to _mint once openzepplin updates their npm package.
     */
-    constructor(uint256 supply) public
-        ERC20Detailed("Bluenote World Token", "BNOW", 18) {
+    constructor(uint256 supply) public {
         _mint(msg.sender, supply);
     }
 
