@@ -1,7 +1,5 @@
 [![Build Status](https://travis-ci.org/nitika-goel/lockable-token.svg?branch=master)](https://travis-ci.org/nitika-goel/lockable-token) [![Coverage Status](https://coveralls.io/repos/github/nitika-goel/lockable-token/badge.svg?branch=master)](https://coveralls.io/github/nitika-goel/lockable-token?branch=master)
 
-This is a sample contract showcasing the implementation of https://github.com/ethereum/EIPs/issues/1132
-
 ## Summary
 An extension to the ERC20 standard with methods for time-locking of tokens within a contract. This contract provides basic functionality to time-lock tokens within a contract for multiple utilities without the need of transferring tokens. It also allows fetching token balances of locked and unlocked tokens (tokens available for transfer).
 
